@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="675.0" style="-fx-background-color: #496e4c;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateAccountController">
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="78.0" prefWidth="584.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="CreateAccountButton" buttonType="RAISED" onAction="#createAccountButtonPressed" prefHeight="43.0" prefWidth="146.0" style="-fx-background-color: #dad7cd;" text="Create Account" textFill="#3a5a40">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="errorLabel" text="One or more answers are empty" textFill="#ff4a1c">
+               <font>
+                  <Font name="Verdana Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </bottom>
+   <top>
+      <GridPane prefHeight="68.0" prefWidth="584.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="421.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="163.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="259.0" text="Answer The Questions Below" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="In what city were you born?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="cityBornTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="What high school did you attend?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="highschoolAttendedTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Make of your first car?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="makeOfFirstCarTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="What is your favourite colour?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favColourTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="What is your favourite food?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favFoodTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label text="What is your father's first name?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="fatherFirstNameTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="What is your favourite sport?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favSport" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Label text="The city your mother is from?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="mothersCityTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+               <children>
+                  <Label text="What is your best friend's name?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="bestFriendNameTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Label text="On what street did you first live?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="streetFirstLivedOnTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+               <children>
+                  <Label text="What is your favourite movie?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favMovieTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Label text="What is your dream job?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="dreamJobTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="6">
+               <children>
+                  <Label text="Who was your childhood hero?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="childhoodHeroTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Label text="Favourite vacation spot?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favVacaySpotTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="7">
+               <children>
+                  <Label text="What is the name of your first pet?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="firstPetNameTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <Label text="Who is your celebrity crush?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="celebCrushTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="8">
+               <children>
+                  <Label text="What is your mother's maiden name?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="mothersMaidenNameTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <Label text="What is your favourite book?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favBookTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="9">
+               <children>
+                  <Label text="What is your favourite type of music?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="favTypeOfMusicTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <children>
+                  <Label text="What is your natural hair colour?" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="hairColourTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
