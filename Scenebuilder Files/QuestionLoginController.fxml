@@ -27,7 +27,7 @@
                         <Font name="Verdana" size="16.0" />
                      </font>
                   </Label>
-                  <JFXPasswordField fx:id="Q1PasswordField" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971;" unFocusColor="#344e41" />
+                  <JFXPasswordField fx:id="Q1PasswordField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-text-fill: white;" unFocusColor="#344e41" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -43,7 +43,7 @@
                         <Font name="Verdana" size="16.0" />
                      </font>
                   </Label>
-                  <JFXPasswordField fx:id="Q2PasswordField" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971;" unFocusColor="#344e41" />
+                  <JFXPasswordField fx:id="Q2PasswordField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-text-fill: white;" unFocusColor="#344e41" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -59,7 +59,7 @@
                         <Font name="Verdana" size="16.0" />
                      </font>
                   </Label>
-                  <JFXPasswordField fx:id="Q3PasswordField" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971;" unFocusColor="#344e41" />
+                  <JFXPasswordField fx:id="Q3PasswordField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: #7e9971; -fx-text-fill: white;" unFocusColor="#344e41" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

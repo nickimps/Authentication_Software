@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -22,13 +23,25 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <Label text="Enter your username" textFill="WHITE">
+                  <Label text="Username:" textFill="WHITE">
                      <font>
                         <Font name="Verdana" size="16.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets right="310.0" />
+                     </VBox.margin>
                   </Label>
                   <JFXTextField fx:id="UserNameTextField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #7e9971; -fx-font-family: verdana; -fx-text-fill: WHITE; -fx-font-size: 14px;" unFocusColor="#344e41" />
-                  <Label fx:id="errorLabel" text="Username not found" textFill="#ff4a1c">
+                  <Label text="Password:" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="310.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXPasswordField fx:id="PasswordPasswordField" alignment="CENTER" focusColor="#dad7cd" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #7e9971; -fx-text-fill: white;" unFocusColor="#344e41" />
+                  <Label fx:id="errorLabel" text="Incorrect username/password" textFill="#ff4a1c">
                      <font>
                         <Font name="Verdana Bold" size="14.0" />
                      </font>
