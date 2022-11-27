@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,19 +12,23 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="600.0" style="-fx-background-color: #323953;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
    <top>
       <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="61.0" prefWidth="584.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="323.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="261.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="HelloLabel" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" text="Answer The Questions Below" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label fx:id="HelloLabel" alignment="CENTER" prefHeight="30.0" prefWidth="296.0" text="Answer The Questions Below" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="18.0" />
+               </font></Label>
             <ImageView fitHeight="64.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../Scenebuilder%20Files/logo.png" />
@@ -35,9 +40,27 @@
    <bottom>
       <VBox alignment="CENTER" prefHeight="106.0" prefWidth="600.0" spacing="12.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="ErrorLabel" text="Incorrect Answers" />
-            <Button fx:id="CreateAccountButton" mnemonicParsing="false" onAction="#createAccountButtonPressed" text="Create Account" />
-            <Button fx:id="BackButton" mnemonicParsing="false" onAction="#backButtonPressed" text="Go Back" />
+            <Label fx:id="ErrorLabel" text="Incorrect Answers" textFill="#ff4a1c">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Label>
+            <Button fx:id="CreateAccountButton" mnemonicParsing="false" onAction="#createAccountButtonPressed" prefHeight="43.0" prefWidth="153.0" style="-fx-background-color: white;" text="Create Account" textFill="#323953">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="BackButton" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="22.0" prefWidth="76.0" style="-fx-background-color: white;" text="Go Back" textFill="#323953">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -65,281 +88,401 @@
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label text="Username">
+                  <Label text="Username" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="UserNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="UserNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Label text="Password">
+                  <Label text="Password" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="PasswordTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="PasswordTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <children>
-                  <Label text="In what city were you born?">
+                  <Label text="In what city were you born?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="CityBornTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="CityBornTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label text="What highschool did you attend?">
+                  <Label text="What highschool did you attend?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="HighschoolTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="HighschoolTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                <children>
-                  <Label text="What was the make of your first car?">
+                  <Label text="What was the make of your first car?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="MakeFirstCarTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="MakeFirstCarTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Label text="What is your favourite colour?">
+                  <Label text="What is your favourite colour?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FavColourTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FavColourTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
                <children>
-                  <Label text="What is your favourite food?">
+                  <Label text="What is your favourite food?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FavFoodTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FavFoodTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <Label text="What is your father's first name?">
+                  <Label text="What is your father's first name?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FatherFirstNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FatherFirstNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
                <children>
-                  <Label text="What is your best friend's name?">
+                  <Label text="What is your best friend's name?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="BestiesNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="BestiesNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <Label text="On what street did your first live?">
+                  <Label text="On what street did your first live?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FirstLiveStreetTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FirstLiveStreetTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
                <children>
-                  <Label text="What is your favourite movie?">
+                  <Label text="What is your favourite movie?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FavMovieTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FavMovieTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <Label text="What is your dream job?">
+                  <Label text="What is your dream job?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="DreamJobTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="DreamJobTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="6">
                <children>
-                  <Label text="Who was your childhood hero?">
+                  <Label text="Who was your childhood hero?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="ChildhoodHeroTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="ChildhoodHeroTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Label text="What is your favourite vacation spot?">
+                  <Label text="What is your favourite vacation spot?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="VacaySpotTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="VacaySpotTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="7">
                <children>
-                  <Label text="What is the name of your first pet?">
+                  <Label text="What is the name of your first pet?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FirstPetTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FirstPetTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <Label text="Who is your celebrity crush?">
+                  <Label text="Who is your celebrity crush?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="CelebCrushTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="CelebCrushTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="8">
                <children>
-                  <Label text="What is your mother's maiden name?">
+                  <Label text="What is your mother's maiden name?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="MothersMaidenNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="MothersMaidenNameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
                <children>
-                  <Label text="What is your favourite book?">
+                  <Label text="What is your favourite book?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FavBookTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FavBookTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="9">
                <children>
-                  <Label text="What is your favourite type of music?">
+                  <Label text="What is your favourite type of music?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="FavTypeMusicTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="FavTypeMusicTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                <children>
-                  <Label text="What is your natural hair colour?">
+                  <Label text="What is your natural hair colour?" textFill="WHITE">
                      <padding>
                         <Insets left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
                   </Label>
-                  <TextField fx:id="NaturalHairColourTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0">
+                  <TextField fx:id="NaturalHairColourTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="27.0" prefWidth="250.0" style="-fx-background-color: #6371A6; -fx-text-fill: white; -fx-font-family: verdana; -fx-font-size: 12px;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" />
                      </padding>
+                     <font>
+                        <Font name="Verdana" size="13.0" />
+                     </font>
                   </TextField>
                </children>
             </VBox>

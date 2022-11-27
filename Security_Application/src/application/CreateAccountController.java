@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 public class CreateAccountController {
 
@@ -127,6 +128,7 @@ public class CreateAccountController {
 				FirstPetTextField.getText() == "" || HighschoolTextField.getText() == "" || MakeFirstCarTextField.getText() == "" || MothersMaidenNameTextField.getText() == "" || NaturalHairColourTextField.getText() == "" || VacaySpotTextField.getText() == "") {
     		ErrorLabel.setVisible(true);
 			ErrorLabel.setText("Please answer all questions.");
+			ErrorLabel.setTextFill(Color.web("#ff4a1c"));
     	} else {
     		//Try-Catch
         	try {
@@ -161,15 +163,18 @@ public class CreateAccountController {
     				resetFields();
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("Account Successfully Created!");
+    				ErrorLabel.setTextFill(Color.web("#7ac24f"));
     				
     			} 
     			catch (SQLIntegrityConstraintViolationException e) {
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("Username already exists.");
+    				ErrorLabel.setTextFill(Color.web("#ff4a1c"));
     			}
     			catch (com.mysql.cj.jdbc.exceptions.MysqlDataTruncation e) {
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("One of your answers are too long.");
+    				ErrorLabel.setTextFill(Color.web("#ff4a1c"));
     			}
     			catch (SQLException e) {
     				e.printStackTrace();
@@ -213,6 +218,7 @@ public class CreateAccountController {
     	NaturalHairColourTextField.setText("");
     	VacaySpotTextField.setText("");
     	ErrorLabel.setVisible(false);
+    	ErrorLabel.setTextFill(Color.web("#ff4a1c"));
     }
 
 }
