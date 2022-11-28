@@ -50,9 +50,12 @@ public class LoginScreenController {
     private Scene sceneCreateAccount;
     
     /**
-     * Sets the main scene of the program
+     * Passes in the scenes to the class so that we can access other functions in the code
      * 
-     * @param main The scene of the main
+     * @param main
+     * @param sceneQuestionLogin
+     * @param sceneCreateAccount
+     * @param questionLoginScreenController
      */
     public void setScenes(Main main, Scene sceneQuestionLogin, Scene sceneCreateAccount, QuestionLoginScreenController questionLoginScreenController) {
     	this.main = main;
@@ -63,8 +66,8 @@ public class LoginScreenController {
 
     @FXML
     void createAccountButtonPressed(ActionEvent event) {
+    	// Change the scene and clear any textfields and labels
     	main.setScreen(sceneCreateAccount);
-    	
     	UserNameTextField.setText("");
     	PasswordPasswordField.setText("");
     	ErrorLabel.setVisible(false);
@@ -72,7 +75,7 @@ public class LoginScreenController {
 
     @FXML
     void proceedButtonPressed(ActionEvent event) {
-    	
+    	// If either the username or the password are empty, throw an error
     	if (UserNameTextField.getText() == "" || PasswordPasswordField.getText() == "") {
     		ErrorLabel.setVisible(true);
     		ErrorLabel.setText("Please enter a username/password.");
@@ -93,9 +96,12 @@ public class LoginScreenController {
     			try {
     				Statement stmt = conn.createStatement();
     				
+    				// Query the database for the account information
     				ResultSet rs = stmt.executeQuery("SELECT password FROM Account WHERE username = '" + UserNameTextField.getText() + "';");
     				
+    				//If the account exists, otherwise alert user
     				if (rs.next()) {
+    					//If the password matches, then grant access to the question screen and clear textfields
     					if (PasswordPasswordField.getText().equals(rs.getString(1))) {
         					questionLoginScreenController.getUsername(UserNameTextField.getText());
         		        	questionLoginScreenController.loadQuestions();
@@ -106,10 +112,12 @@ public class LoginScreenController {
         		        	
         		        	main.setScreen(sceneQuestionLogin);
         				} else {
+        					//Show error label
         					ErrorLabel.setVisible(true);
         		    		ErrorLabel.setText("Incorrect username/password.");
         				}
     				} else {
+    					//Show error label
     					ErrorLabel.setVisible(true);
     		    		ErrorLabel.setText("Incorrect username/password.");
     				}

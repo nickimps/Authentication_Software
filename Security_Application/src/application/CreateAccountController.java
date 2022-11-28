@@ -104,9 +104,9 @@ public class CreateAccountController {
     private Scene sceneLogin;
     
     /**
-     * Sets the main scene of the program
-     * 
-     * @param main The scene of the main
+     * Pass in scenes for controlling the navigation logic
+     * @param main
+     * @param sceneLogin
      */
     public void setScenes(Main main, Scene sceneLogin) {
     	this.main = main;
@@ -122,10 +122,11 @@ public class CreateAccountController {
 
     @FXML
     void createAccountButtonPressed(ActionEvent event) {
-    	
+    	//Check to make sure that all fields have text within them
     	if (UserNameTextField.getText() == "" || PasswordTextField.getText() == "" || BestiesNameTextField.getText() == "" || CelebCrushTextField.getText() == "" || ChildhoodHeroTextField.getText() == "" || CityBornTextField.getText() == "" || DreamJobTextField.getText() == "" ||
 				FatherFirstNameTextField.getText() == "" || FavBookTextField.getText() == "" || FavColourTextField.getText() == "" || FavFoodTextField.getText() == "" || FavMovieTextField.getText() == "" || FavTypeMusicTextField.getText() == "" || FirstLiveStreetTextField.getText() == "" ||
 				FirstPetTextField.getText() == "" || HighschoolTextField.getText() == "" || MakeFirstCarTextField.getText() == "" || MothersMaidenNameTextField.getText() == "" || NaturalHairColourTextField.getText() == "" || VacaySpotTextField.getText() == "") {
+    		//Notify user to answer all the fields
     		ErrorLabel.setVisible(true);
 			ErrorLabel.setText("Please answer all questions.");
 			ErrorLabel.setTextFill(Color.web("#ff4a1c"));
@@ -145,6 +146,7 @@ public class CreateAccountController {
     			try {
     				Statement stmt = conn.createStatement();
     				
+    				//Get new seed number for this new user
     				int newSeed = (int) ((Math.random() * (5000 - 1)) + 1);
     			    
     				//check to make sure no fields are empty
@@ -159,7 +161,8 @@ public class CreateAccountController {
     																		+ HighschoolTextField.getText() + "','" + MakeFirstCarTextField.getText() + "','" + MothersMaidenNameTextField.getText() + "','" + NaturalHairColourTextField.getText() + "','" + VacaySpotTextField.getText() + "','"
     																		+ newSeed + "')");
     				}
-    				    			    
+    				
+    				//Clear fields and show success message
     				resetFields();
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("Account Successfully Created!");
@@ -167,11 +170,13 @@ public class CreateAccountController {
     				
     			} 
     			catch (SQLIntegrityConstraintViolationException e) {
+    				//Show error message for user existing already
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("Username already exists.");
     				ErrorLabel.setTextFill(Color.web("#ff4a1c"));
     			}
     			catch (com.mysql.cj.jdbc.exceptions.MysqlDataTruncation e) {
+    				//Show error message for too long of an answer
     				ErrorLabel.setVisible(true);
     				ErrorLabel.setText("One of your answers are too long.");
     				ErrorLabel.setTextFill(Color.web("#ff4a1c"));

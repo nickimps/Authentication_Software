@@ -86,8 +86,6 @@ public class Main extends Application {
 			accessGrantedController.setScenes(this, sceneLogin);
 			createAccountController.setScenes(this, sceneLogin);
 			
-			
-
 			//Finally, set the initial UI screen that the user sees
 			stage.setScene(sceneLogin);
 			stage.setTitle("Cyberlytics Authentication");

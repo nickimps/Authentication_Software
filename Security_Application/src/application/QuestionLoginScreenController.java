@@ -68,10 +68,13 @@ public class QuestionLoginScreenController {
     private String[][] questions = {{"In what city were you born?", "What highschool did you attend?", "What was the make of your first car?", "What is your favourite colour?", "What is your favourite food?", "What is your father's first name?", "What is your best friend's name?", "On what street did you first live?", "What is your favourite movie?", "What is your dream job?", "Who was your childhood hero?", "Favourite vacation spot?", "What is the name of your first pet?", "Who is your celebrity crush?", "What is your mother's maiden name?", "What is your favourite book?", "What is your favourite type of music?", "What is your natural hair colour?"},
 			{"CityBornTextField", "HighschoolTextField", "MakeFirstCarTextField", "FavColourTextField", "FavFoodTextField", "FatherFirstNameTextField", "BestiesNameTextField", "FirstLiveStreetTextField", "FavMovieTextField", "DreamJobTextField", "ChildhoodHeroTextField", "VacaySpotTextField", "FirstPetTextField", "CelebCrushTextField", "MothersMaidenNameTextField", "FavBookTextField", "FavTypeMusicTextField", "NaturalHairColourTextField"}};
     
+    
     /**
-     * Sets the main scene of the program
+     * Passes in the scenes to the class so that we can access other functions in the code
      * 
-     * @param main The scene of the main
+     * @param main
+     * @param sceneAccessGranted
+     * @param sceneLogin
      */
     public void setScenes(Main main, Scene sceneAccessGranted, Scene sceneLogin) {
     	this.main = main;
@@ -79,12 +82,21 @@ public class QuestionLoginScreenController {
     	this.sceneLogin = sceneLogin;
     }
     
+    /**
+     * sets the username of the user so that we can show their name
+     * 
+     * @param username
+     */
     public void getUsername(String username) {
     	this.username = username;
     }
     
+    /**
+     * When the user logins in the loginScreenController, this function has the questions present for them.
+     */
     public void loadQuestions() {
     	
+    	//Change the label
     	HelloLabel.setText("Hello, " + username);
     	
     	//Try-Catch
@@ -102,24 +114,30 @@ public class QuestionLoginScreenController {
 			try {
 				Statement stmt = conn.createStatement();
 				
+				//Create random variable
 				Random random = new Random();
 				
+				//Query to get seed number
 				ResultSet rs = stmt.executeQuery("SELECT seed FROM Account WHERE username = '" + username + "';");
+				
+				//Get the seed and create a random number based on that seed
 				rs.next();
 			    String seed = rs.getString(1);
 				random.setSeed(Integer.parseInt(seed));
-
+				
+				//Get three question indexes to pull from
 				int q1 = random.nextInt(17);
 				int q2 = random.nextInt(17);
 				int q3 = random.nextInt(17);
-
+				
+				//Make sure the numbers are not duplicates
 				while(q1 == q2 || q2 == q3) { q2 = random.nextInt(17); }
 				while(q1 == q3 || q2 == q3) { q3 = random.nextInt(17); }
 				
+				//Assign questions and set text of the labels
 				Q1 = q1;
 				Q2 = q2;
 				Q3 = q3;
-				
 				Q1Label.setText(questions[0][q1]);
 				Q2Label.setText(questions[0][q2]);
 				Q3Label.setText(questions[0][q3]);
@@ -147,7 +165,7 @@ public class QuestionLoginScreenController {
 
     @FXML
     void loginButtonPressed(ActionEvent event) {
-    	
+    	//Make sure that each answer field has some sort of text in it.
     	if (Q1PassswordField.getText() == "" || Q2PassswordField.getText() == "" || Q3PassswordField.getText() == "") {
     		ErrorLabel.setVisible(true);
     		ErrorLabel.setText("Please answer all questions.");
@@ -167,13 +185,15 @@ public class QuestionLoginScreenController {
     			try {
     				Statement stmt = conn.createStatement();
     				
+    				//Query to get seed number from the user
     				ResultSet rs = stmt.executeQuery("SELECT seed FROM Account WHERE username = '" + username + "';");
     				rs.next();
+    				
+    				//Get the questions answers for the user
     				rs = stmt.executeQuery("SELECT " + questions[1][Q1] + "," + questions[1][Q2] + "," + questions[1][Q3] + " FROM Account WHERE username = '" + username + "';");
     				rs.next();
-    				
-    				
-    				
+    				 				
+    				//If all answer fields are equal to the correct answers then Update the database with the new generated seed, clear the fields and grant the user access
     				if (rs.getString(1).equals(Q1PassswordField.getText()) && rs.getString(2).equals(Q2PassswordField.getText()) && rs.getString(3).equals(Q3PassswordField.getText())) {
     					int newSeed = (int) ((Math.random() * (5000 - 1)) + 1);
     					stmt.executeUpdate("UPDATE Account SET seed = " + newSeed + " WHERE username = '" + username + "'");
@@ -184,7 +204,8 @@ public class QuestionLoginScreenController {
     					
     					main.setScreen(sceneAccessGranted);
     				}
-    				else {    					
+    				else {
+    					//Show error labels
     					ErrorLabel.setVisible(true);
     					ErrorLabel.setText("Incorrect answer(s).");
     				}
